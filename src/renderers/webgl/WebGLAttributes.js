@@ -13,6 +13,7 @@ function WebGLAttributes( gl ) {
 
 		var buffer = gl.createBuffer();
 
+		// @TODO Here can pollute index in VAO if bufferType === gl.ELEMENT_ARRAY_BUFFER unless VAO bound to null
 		gl.bindBuffer( bufferType, buffer );
 		gl.bufferData( bufferType, array, usage );
 
@@ -68,6 +69,7 @@ function WebGLAttributes( gl ) {
 		var array = attribute.array;
 		var updateRange = attribute.updateRange;
 
+		// @TODO Here can pollute index in VAO if bufferType === gl.ELEMENT_ARRAY_BUFFER unless VAO bound to null
 		gl.bindBuffer( bufferType, buffer );
 
 		if ( attribute.dynamic === false ) {
